@@ -20,6 +20,7 @@
       "usernameToLower": "aa",
       "id": "7ad6ed91-d0b8-4d68-b6b0-b78c05a0f02d",
       "authKey": "7ad6ed91-d0b8-4d68-b6b0-b78c05a0f02dmDWRmvMFXUTLpThlscyrpbkl"
+<<<<<<< .mine
     },
     {
       "username": "am",
@@ -34,6 +35,22 @@
       "usernameToLower": "a",
       "id": "8592c8ab-dfd9-4c2a-8f4c-e6ec9e79ab85",
       "authKey": "8592c8ab-dfd9-4c2a-8f4c-e6ec9e79ab85VTsfuvoQJOWewrsaQYcwarYf"
+=======
+    },
+    {
+      "username": "test",
+      "passHash": "test",
+      "usernameToLower": "test",
+      "id": "9c0e854f-0411-43f9-9cc3-3be0d887e375",
+      "authKey": "9c0e854f-0411-43f9-9cc3-3be0d887e375ATeMSoyjkhFIIakPVCJCDCLI"
+    },
+    {
+      "username": "test2",
+      "passHash": "test",
+      "usernameToLower": "test2",
+      "id": "7c1910f9-e4da-4ddd-8862-5219ff13326e",
+      "authKey": "7c1910f9-e4da-4ddd-8862-5219ff13326eZUViGlocilPRdaBqDqjnMfcj"
+>>>>>>> .theirs
     }
   ],
   "cookies": [
