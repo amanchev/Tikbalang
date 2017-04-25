@@ -21,7 +21,7 @@ body.fixed-nav {
 
 @media (min-width: 992px) {
     .content-wrapper {
-        margin: auto;
+        margin-left: 250px;
     }
 }
 
