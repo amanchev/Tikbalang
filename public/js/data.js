@@ -10,10 +10,6 @@ export function getClients() {
     return requester.get('api/clients');
 }
 
-export function getCookies() {
-    return requester.get('api/cookies');
-}
-
 export function login(username, passHash) {
     const body = {
         username,
