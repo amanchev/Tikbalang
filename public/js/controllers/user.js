@@ -8,11 +8,14 @@ const LOCALSTORAGE_USERNAME = 'username';
 const AUTH_KEY_HEADER = 'x-auth-key';
 
 export function get(params) {
+
     const { category } = params;
+
 
     loadTemplate('auth')
         .then(template => {
             $appContainer.html(template());
+
         });
 }
 
@@ -26,8 +29,9 @@ export function login() {
             result => {
                 localStorage.setItem(LOCALSTORAGE_AUTH_KEY_NAME, result.result.authKey);
                 localStorage.setItem(LOCALSTORAGE_USERNAME, username);
-                $('#auth-btn').addClass('hidden');
-                $('#signout-btn').removeClass('hidden');
+                $('#log-in-btn').addClass('hidden');
+                $('#register-btn').addClass('hidden');
+
                 toastr.success(`Hi, ${username}`);
                 location.href = '#/home';
             },
@@ -51,14 +55,8 @@ export function register() {
 export function logout() {
     localStorage.removeItem(LOCALSTORAGE_AUTH_KEY_NAME);
     localStorage.removeItem(LOCALSTORAGE_USERNAME);
-    $('#auth-btn').removeClass('hidden');
-    $('#signout-btn').addClass('hidden');
-    //toastr.success('Logged out');
+    $('#log-in-btn').removeClass('hidden');
+    $('#register-btn').removeClass('hidden');
+    toastr.success('Logged out');
     location.href = '#/auth';
-}
-export function isLoggedIn() {
-    return Promise.resolve()
-        .then(() => {
-            return !!localStorage.getItem("LOCALSTORAGE_USERNAME");
-        });
 }

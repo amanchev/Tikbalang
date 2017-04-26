@@ -10,7 +10,7 @@ const router = new MyRouter();
 
 
 router
-    .on('', () => location.hash = '#/home') // fix later
+    .on('', () => location.hash = '#/home')
     .on('/', () => location.hash = '#/home')
     .on('/home', homeController.get)
     .on('/auth', userController.get)
@@ -23,27 +23,41 @@ router
 //$(window).on('load', () => router.navigate());
 $(document).ready(() => {
 
-    if ((userController.isLoggedin) === undefined && (location.hash !== '/#auth' || location.hash !== '#/login' || location.hash !== '#/register')) {
-        toastr.success('You are not logged In');
 
-        location.hash = '#/auth';
+    let isLoggedIn = localStorage.username;
+    console.log(isLoggedIn);
+
+    if ((location.hash === '#/auth' || location.hash === '#/login' || location.hash === '#/register')) {
+
         router.navigate();
-
+    } else if (isLoggedIn) {
+        router.navigate();
     } else {
+        toastr.success('You are not logged In');
+        location.hash = '#/auth';
         router.navigate();
     }
 });
 $(window).on('hashchange', () => {
 
-    if ((userController.isLoggedin) === undefined && (location.hash !== '/#auth' || location.hash !== '#/login' || location.hash !== '#/register')) {
-        toastr.success('You are not logged In');
+    let isLoggedIn = localStorage.username;
 
+    console.log(isLoggedIn);
+
+
+    if ((location.hash === '#/auth' || location.hash === '#/login' || location.hash === '#/register')) {
+
+        router.navigate();
+    } else if (isLoggedIn) {
+        router.navigate();
+    } else {
+        toastr.success('You are not logged In');
         location.hash = '#/auth';
         router.navigate();
-
-    } else {
-        router.navigate();
     }
+
+
+
 });
 
 $(document).scroll(function() {
