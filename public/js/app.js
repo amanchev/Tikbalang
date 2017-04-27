@@ -9,6 +9,7 @@ const router = new MyRouter();
 
 
 
+
 router
     .on('', () => location.hash = '#/home')
     .on('/', () => location.hash = '#/home')
@@ -25,6 +26,7 @@ $(document).ready(() => {
 
 
     let isLoggedIn = localStorage.username;
+	const usernameSpan = $('#span-username');
     console.log(isLoggedIn);
 
     if ((location.hash === '#/auth' || location.hash === '#/login' || location.hash === '#/register')) {
@@ -32,6 +34,7 @@ $(document).ready(() => {
         router.navigate();
     } else if (isLoggedIn) {
         router.navigate();
+		usernameSpan.text(isLoggedIn);
     } else {
         toastr.success('You are not logged In');
         location.hash = '#/auth';
@@ -41,7 +44,7 @@ $(document).ready(() => {
 $(window).on('hashchange', () => {
 
     let isLoggedIn = localStorage.username;
-
+	const usernameSpan = $('#span-username');
     console.log(isLoggedIn);
 
 
@@ -50,6 +53,8 @@ $(window).on('hashchange', () => {
         router.navigate();
     } else if (isLoggedIn) {
         router.navigate();
+		usernameSpan.text(isLoggedIn);
+		
     } else {
         toastr.success('You are not logged In');
         location.hash = '#/auth';
