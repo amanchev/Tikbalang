@@ -16,6 +16,7 @@ require('./utils/authorize-user')(app, db);
 //User routes
 var usersController = require('./controllers/users-controller')(db);
 app.get('/api/users', usersController.get);
+app.get('/api/clients', clientController.get);
 app.post('/api/users', usersController.post);
 app.put('/api/auth', usersController.put);
 
