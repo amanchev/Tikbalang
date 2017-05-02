@@ -19,11 +19,6 @@ export function get(params) {
 
             let data = clients.result.clients;
 
-            let client = data.map((el) => {
-
-                return el;
-
-            });
-            $appContainer.html(template(client[window.location.hash.split(':')[1] - 1]));
+            $appContainer.html(template(data[window.location.hash.split(':')[1] - 1]));
         });
 }
