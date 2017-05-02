@@ -6,9 +6,12 @@ const DEFAULT_COOKIE_IMAGE = "https://dayinthelifeofapurpleminion.files.wordpres
 
 module.exports = function(db) {
     function get(req, res) {
-        let clients = _.chain(db("clients"));
+        let clients = _.chain(db("clients"))
+            .map(function(client) {
+                return client;
+            }).value();
 
-        res.send({
+        res.json({
             result: clients
         });
     }
@@ -74,5 +77,5 @@ module.exports = function(db) {
     //     });
     // }
 
-    return {get};
+    return {get: get};
 };
