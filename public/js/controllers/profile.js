@@ -13,10 +13,11 @@ export function get(params) {
     const { category } = params;
 
     Promise.all([
-            loadTemplate('profile'),
-
+            loadTemplate('clients'),
+            data.getClients()
         ])
-        .then(([template]) => {
-            $appContainer.html(template());
+        .then(([template, clients]) => {
+            console.log(clients.result.clients);
+            $appContainer.html(template(clients.result.clients));
         });
 }
