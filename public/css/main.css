@@ -452,3 +452,8 @@ body.fixed-nav {
     background-image: url('../images/login-background.jpg');
     background-size: cover;
 }
+
+.greetings {
+    color: #ccc;
+    padding-top: 10px;
+}
