@@ -13,10 +13,11 @@ export function get(params) {
 
     Promise.all([
             loadTemplate('clients'),
-
+            data.getClients()
         ])
-        .then(([template]) => {
-            $appContainer.html(template());
+        .then(([template, clients]) => {
+            console.log(clients);
+            $appContainer.html(template(clients));
         })
         .then(() => {
             $('#dataTable').DataTable();
