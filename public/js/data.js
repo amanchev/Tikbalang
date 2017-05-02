@@ -6,9 +6,9 @@ export function getUsers() {
 }
 
 export function getClients() {
-    // Add authentication
     return requester.get('api/clients');
 }
+
 
 export function login(username, passHash) {
     const body = {

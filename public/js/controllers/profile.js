@@ -10,14 +10,20 @@ const template = Handlebars.compile(homeTemplate);
 const $appContainer = $('#app-container');
 
 export function get(params) {
-    const { category } = params;
 
     Promise.all([
-            loadTemplate('clients'),
+            loadTemplate('profile'),
             data.getClients()
         ])
         .then(([template, clients]) => {
-            console.log(clients.result.clients);
-            $appContainer.html(template(clients.result.clients));
+
+            let data = clients.result.clients;
+
+            let client = data.map((el) => {
+
+                return el;
+
+            });
+            $appContainer.html(template(client[window.location.hash.split(':')[1] - 1]));
         });
 }

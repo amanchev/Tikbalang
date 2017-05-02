@@ -19,7 +19,7 @@ router
     .on('/register', userController.register)
     .on('/logout', userController.logout)
     .on('/clients', clientsController.get)
-    .on('/profile/:username', profileController.get);
+    .on('/profile/:id', profileController.get);
 
 $(document).ready(() => {
 

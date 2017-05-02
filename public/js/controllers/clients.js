@@ -16,7 +16,6 @@ export function get(params) {
             data.getClients()
         ])
         .then(([template, clients]) => {
-            console.log(clients);
             $appContainer.html(template(clients));
         })
         .then(() => {
