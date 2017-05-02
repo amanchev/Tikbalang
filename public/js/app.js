@@ -43,7 +43,6 @@ $(window).on('hashchange', () => {
 
     let isLoggedIn = localStorage.username;
     const usernameSpan = $('#span-username');
-    console.log(isLoggedIn);
 
 
     if ((location.hash === '#/auth' || location.hash === '#/login' || location.hash === '#/register')) {
