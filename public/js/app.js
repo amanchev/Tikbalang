@@ -19,14 +19,13 @@ router
     .on('/register', userController.register)
     .on('/logout', userController.logout)
     .on('/clients', clientsController.get)
-    .on('/profile', profileController.get);
+    .on('/profile/:username', profileController.get);
 
-//$(window).on('load', () => router.navigate());
 $(document).ready(() => {
 
 
     let isLoggedIn = localStorage.username;
-	const usernameSpan = $('#span-username');
+    const usernameSpan = $('#span-username');
     console.log(isLoggedIn);
 
     if ((location.hash === '#/auth' || location.hash === '#/login' || location.hash === '#/register')) {
@@ -34,7 +33,7 @@ $(document).ready(() => {
         router.navigate();
     } else if (isLoggedIn) {
         router.navigate();
-		usernameSpan.text(isLoggedIn);
+        usernameSpan.html('<a href="#/profile/:' + isLoggedIn + '">' + isLoggedIn + '</a>');
     } else {
         toastr.success('You are not logged In');
         location.hash = '#/auth';
@@ -44,7 +43,7 @@ $(document).ready(() => {
 $(window).on('hashchange', () => {
 
     let isLoggedIn = localStorage.username;
-	const usernameSpan = $('#span-username');
+    const usernameSpan = $('#span-username');
     console.log(isLoggedIn);
 
 
@@ -53,8 +52,8 @@ $(window).on('hashchange', () => {
         router.navigate();
     } else if (isLoggedIn) {
         router.navigate();
-		usernameSpan.text(isLoggedIn);
-		
+        usernameSpan.html('<a href="#/profile/:' + isLoggedIn + '">' + isLoggedIn + '</a>');
+
     } else {
         toastr.success('You are not logged In');
         location.hash = '#/auth';
