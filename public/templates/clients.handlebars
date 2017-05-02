@@ -33,22 +33,24 @@
                     </tr>
                 </tfoot>
                 <tbody>
-
-                    <tr>
+{{#each this.result.clients}}
+    <tr>
 
                         <th>
-                            <a href="/#/profile"><img src="images/pic.jpg" width="80px"></a>
+                            <a href="/#/profile/:{{id}}"><img src="{{Picture}}" width="80px"></a>
                         </th>
                         <td>
 
-                            Tiger Nixon
+                            {{Name}}
                         </td>
-                        <td>System Architect</td>
-                        <td>18</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>{{Profession}}</td>
+                        <td>{{Age}}</td>
+                        <td>{{TrainingsLeft}}</td>
+                        <td>{{EndDate}}</td>
+                        <td>{{CardPrice}}</td>
                     </tr>
+{{/each}}
+                    
 
                     <tr>
                         <th><img src="images/pic.jpg" width="80px"></th>

@@ -1,16 +1,9 @@
 /* globals require module */
 
-const _ = require("lodash");
-
-const DEFAULT_COOKIE_IMAGE = "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg";
 
 module.exports = function(db) {
     function get(req, res) {
-        let clients = _.chain(db("clients"))
-            .map(function(client) {
-                return client;
-            }).value();
-
+        let clients = db("clients");
         res.json({
             result: clients
         });
@@ -77,5 +70,5 @@ module.exports = function(db) {
     //     });
     // }
 
-    return {get: get};
+    return { get: get };
 };
