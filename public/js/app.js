@@ -19,6 +19,7 @@ router
     .on('/register', userController.register)
     .on('/logout', userController.logout)
     .on('/clients', clientsController.get)
+    .on('/addclient', clientsController.addClient)
     .on('/profile/:id', profileController.get);
 
 $(document).ready(() => { loggedInCheck(); });

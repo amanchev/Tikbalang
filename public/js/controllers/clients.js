@@ -21,7 +21,7 @@ export function get(params) {
         .then(() => {
             $('#dataTable').DataTable();
 
-            $("#dataTable_filter label").addClass("col-sm-6 col-md-6");
+            $("#dataTable_filter label").addClass("col-sm-8 col-md-8");
             $("#dataTable_filter").append('<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Add Client</button>');
 
             $('.add-client').on('click', function() {
@@ -41,4 +41,21 @@ export function get(params) {
 
             });
         });
+}
+
+export function addClient() {
+    const name = 5;
+    const profession = 5;
+    const age = 5;
+    const trainings = 5;
+    const endDate = 5;
+    const price = 5;
+
+    data.addClient(name, profession, age, trainings, endDate, price)
+        .then(
+            result => {
+                toastr.success(`Client ${name} has been added successfully`);
+
+            },
+            errorMsg => toastr.error(errorMsg));
 }

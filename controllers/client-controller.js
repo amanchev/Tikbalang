@@ -10,25 +10,16 @@ module.exports = function(db) {
         });
     }
 
-    function getById(id, req, res) {
-        let client = db("clients")
-            .map(function(client) {
-                if (client.id === id)
+    function post(req, res) {
+        var client = req.body;
+        client.id = 555;
 
-                    return {
-                    result: client
-                };
-            });
-
-
-
-
-        res.json({
-            result: client
-        });
+        db('clients').insert(client);
+        res.status(201);
     }
+
     return {
         get: get,
-        getById: getById
+        post: post,
     };
 };

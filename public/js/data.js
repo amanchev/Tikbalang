@@ -27,3 +27,15 @@ export function register(username, passHash) {
 
     return requester.post('api/users', body);
 }
+export function addClient(name, profession, age, trainings, endDate, price) {
+    const body = {
+        name,
+        profession,
+        age,
+        trainings,
+        endDate,
+        price,
+    };
+
+    return requester.post('api/clients', body);
+}

@@ -37,17 +37,17 @@
                     <tr>
 
                         <th>
-                            <a href="/#/profile/:{{id}}"><img src="{{Picture}}" width="80px"></a>
+                            <a href="/#/profile/:{{id}}"><img src="{{picture}}" width="80px"></a>
                         </th>
                         <td>
 
-                            {{Name}}
+                            {{name}}
                         </td>
-                        <td>{{Profession}}</td>
-                        <td>{{Age}}</td>
-                        <td>{{TrainingsLeft}}</td>
-                        <td>{{EndDate}}</td>
-                        <td>{{CardPrice}}</td>
+                        <td>{{profession}}</td>
+                        <td>{{age}}</td>
+                        <td>{{trainings}}</td>
+                        <td>{{endDate}}</td>
+                        <td>{{price}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -110,7 +110,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+                <a href="#/addclient"><button type="button" class="btn btn-primary">Add</button></a>
             </div>
         </div>
         <!-- /.modal-content -->

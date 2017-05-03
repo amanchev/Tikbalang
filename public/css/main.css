@@ -461,3 +461,11 @@ body.fixed-nav {
 .user-image {
     background-color: white;
 }
+
+.dataTables_length {
+    display: inline-block;
+}
+
+.dataTables_filter {
+    display: inline-block;
+}
