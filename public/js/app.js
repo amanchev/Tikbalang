@@ -22,7 +22,11 @@ router
     .on('/profile/:id', profileController.get);
 
 $(document).ready(() => { loggedInCheck(); });
-$(window).on('hashchange', () => { loggedInCheck(); });
+$(window).on('hashchange', () => {
+
+    loggedInCheck();
+
+});
 
 function loggedInCheck() {
 
@@ -42,6 +46,11 @@ function loggedInCheck() {
         toastr.error('You are not logged In');
         location.hash = '#/auth';
         router.navigate();
+    }
+
+    if (location.hash !== '#/home' && location.hash !== '#/clients') {
+        $(".sidebar-nav").find(".active").removeClass("active");
+
     }
 
 }

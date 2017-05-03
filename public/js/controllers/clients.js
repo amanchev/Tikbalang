@@ -22,7 +22,7 @@ export function get(params) {
             $('#dataTable').DataTable();
 
             $("#dataTable_filter label").addClass("col-sm-6 col-md-6");
-            $("#dataTable_filter").append('<button class="add-client col-sm-6 col-md-3 col-md-offset-12">Add client</button>');
+            $("#dataTable_filter").append('<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Add Client</button>');
 
             $('.add-client').on('click', function() {
 

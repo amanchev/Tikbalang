@@ -12,9 +12,9 @@ export function get(params) {
     const { category } = params;
 
     Promise.all([
-        loadTemplate('home'),
+            loadTemplate('home'),
 
-    ])
+        ])
         .then(([template]) => {
             $appContainer.html(template());
         })

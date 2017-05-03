@@ -458,7 +458,6 @@ body.fixed-nav {
     padding-top: 10px;
 }
 
-#toaster-container {
-    z-index: 100;
-    background: gray;
+.user-image {
+    background-color: white;
 }
