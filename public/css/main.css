@@ -457,3 +457,8 @@ body.fixed-nav {
     color: #ccc;
     padding-top: 10px;
 }
+
+#toaster-container {
+    z-index: 100;
+    background: gray;
+}

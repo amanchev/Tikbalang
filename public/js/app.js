@@ -21,25 +21,11 @@ router
     .on('/clients', clientsController.get)
     .on('/profile/:id', profileController.get);
 
-$(document).ready(() => {
+$(document).ready(() => { loggedInCheck(); });
+$(window).on('hashchange', () => { loggedInCheck(); });
 
+function loggedInCheck() {
 
-    let isLoggedIn = localStorage.username;
-    const usernameSpan = $('#span-username');
-
-    if ((location.hash === '#/auth' || location.hash === '#/login' || location.hash === '#/register')) {
-
-        router.navigate();
-    } else if (isLoggedIn) {
-        router.navigate();
-        usernameSpan.html('<a href="#/profile/:' + isLoggedIn + '">' + isLoggedIn + '</a>');
-    } else {
-        toastr.success('You are not logged In');
-        location.hash = '#/auth';
-        router.navigate();
-    }
-});
-$(window).on('hashchange', () => {
 
     let isLoggedIn = localStorage.username;
     const usernameSpan = $('#span-username');
@@ -50,17 +36,15 @@ $(window).on('hashchange', () => {
         router.navigate();
     } else if (isLoggedIn) {
         router.navigate();
-        usernameSpan.html('<a href="#/profile/:' + isLoggedIn + '">' + isLoggedIn + '</a>');
+        usernameSpan.html(isLoggedIn);
 
     } else {
-        toastr.success('You are not logged In');
+        toastr.error('You are not logged In');
         location.hash = '#/auth';
         router.navigate();
     }
 
-
-
-});
+}
 
 $(document).scroll(function() {
     var scrollDistance = $(this).scrollTop();
