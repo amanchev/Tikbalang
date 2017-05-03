@@ -1,0 +1,11 @@
+Add client functionality user friendly interface
+Remove client functionality
+Fix Cheking for login or not
+
+Unit Testing
+Facebook share or like
+
+Add trainings 
+Edit Profile
+
+
