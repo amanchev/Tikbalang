@@ -44,12 +44,12 @@ export function get(params) {
 }
 
 export function addClient() {
-    const name = 5;
-    const profession = 5;
-    const age = 5;
-    const trainings = 5;
-    const endDate = 5;
-    const price = 5;
+    const name = $('#name').val();
+    const profession = $('#Profession').val();
+    const age = $('#age').val();
+    const trainings = $('#trainings').val();
+    const endDate = $('#date').val();
+    const price = $('#price').val();
 
     data.addClient(name, profession, age, trainings, endDate, price)
         .then(
