@@ -50,8 +50,9 @@ export function addClient() {
     const trainings = $('#trainings').val();
     const endDate = $('#date').val();
     const price = $('#price').val();
+	const picture = 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png';
 
-    data.addClient(name, profession, age, trainings, endDate, price)
+    data.addClient(name, profession, age, trainings, endDate, price, picture)
         .then(
             result => {
                 toastr.success(`Client ${name} has been added successfully`);

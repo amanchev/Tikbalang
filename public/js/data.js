@@ -27,7 +27,7 @@ export function register(username, passHash) {
 
     return requester.post('api/users', body);
 }
-export function addClient(name, profession, age, trainings, endDate, price) {
+export function addClient(name, profession, age, trainings, endDate, price, picture) {
     const body = {
         name,
         profession,
@@ -35,6 +35,7 @@ export function addClient(name, profession, age, trainings, endDate, price) {
         trainings,
         endDate,
         price,
+		picture
     };
 
     return requester.post('api/clients', body);
