@@ -17,7 +17,7 @@ export function get(params) {
         ])
         .then(([template, clients]) => {
 
-            let data = clients.result.clients;
+            let data = clients.result;
 
             $appContainer.html(template(data[window.location.hash.split(':')[1] - 1]));
         });

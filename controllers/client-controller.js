@@ -15,7 +15,12 @@ module.exports = function(db) {
         client.id = 555;
 
         db('clients').insert(client);
-        res.status(201);
+        res.status(201)
+            .json({
+                result: {
+                    client: client.id
+                }
+            });
     }
 
     return {

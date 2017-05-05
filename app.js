@@ -18,7 +18,7 @@ var usersController = require('./controllers/users-controller')(db);
 var clientsController = require('./controllers/client-controller')(db);
 app.get('/api/users', usersController.get);
 app.get('/api/clients', clientsController.get);
-app.get('/api/clients', clientsController.post);
+app.post('/api/clients', clientsController.post);
 app.post('/api/users', usersController.post);
 app.put('/api/auth', usersController.put);
 
