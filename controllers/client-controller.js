@@ -2,6 +2,13 @@
 
 
 module.exports = function(db) {
+    let lastId = 41;
+
+    function generateId() {
+        return lastId += 1;
+    }
+
+
     function get(req, res) {
 
         let clients = db("clients");
@@ -12,7 +19,11 @@ module.exports = function(db) {
 
     function post(req, res) {
         var client = req.body;
-        client.id = 555;
+
+
+        client.id = db("clients").__wrapped__.length + 1;
+
+
 
         db('clients').insert(client);
         res.status(201)
