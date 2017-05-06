@@ -17,16 +17,12 @@ System.config({
         'profileController': '../js/controllers/profile.js',
         'templates': '../js/templates.js',
 
-        // templates
-        // 'homeTemplate': 'templates/home.handlebars',
-
         // Library files
         'jquery': '../libs/jquery/dist/jquery.min.js',
         'handlebars': '../libs/handlebars/dist/handlebars.amd.js',
         'cryptojs': '../libs/cryptojs/cryptojs.js',
         'toastr': '../libs/toastr/build/toastr.min.js',
         'unitTests': './data-tests.js'
-
 
     }
 });

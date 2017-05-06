@@ -63,6 +63,72 @@ describe('Unit Tests', () => {
                 .then(done,done)
             });
 
+             it('Expect register() to return object', (done) => {
+                Data.register(body)
+                .then((res)=>{                  
+                    expect(res).to.be.a('object')
+                })
+                .then(done,done)
+            });
+
+        });
+
+        describe('Data.login() tests', () => {
+
+            beforeEach(() => {
+                sinon.stub(Requester, 'put', (body) => {
+                    return (new Promise((resolve, reject) => {
+                        resolve(result);
+                    }));
+                });
+            });
+
+            afterEach(function () {
+                Requester.put.restore();
+            });
+
+            it('Expect login() to make a PUT request', (done) => {
+                Data.login(body)
+                    .then(() => {
+                        expect(Requester.put).to.have.been.calledOnce;
+                    })
+                    .then(done, done)
+            });
+
+            it('Expect login() to make a PUT request to api/auth', (done) => {
+                Data.login(body)
+                    .then(() => {
+                        expect(Requester.put).to.have.been.calledWith('api/auth');
+                    })
+                    .then(done, done)
+            });
+
+            it('Expect login() to call PUT with two parameters', (done)  => {
+                 Data.login(body)
+                 .then(() => {
+                     expect(Requester.put.firstCall.args.length).to.equal(2);
+                 })
+                 .then(done,done)
+            });
+
+            it('Expect login() to call PUT with valid data', (done) => {
+                Data.login(body)
+                .then(() => {
+                    var actual = Object.keys( Requester.put.firstCall.args[1]);
+                    var expected = ['username', 'passHash'];
+                    expect(actual).to.eql(expected);
+                })
+                .then(done,done)
+            });
+
+            it('Expect login() to return object', (done) => {
+                Data.login(body)
+                .then((res)=>{             
+                    expect(res).to.be.a('object')
+                })
+                .then(done,done)
+            });
+
         });
     });
 });
