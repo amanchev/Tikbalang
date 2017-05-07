@@ -116,13 +116,14 @@ body.fixed-nav {
     display: inline;
     border-radius: 50%;
     -webkit-transition: -webkit-transform .8s ease-in-out;
-            transition:transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
 }
 
 #share-buttons img:hover {
- -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
+
 .scroll-to-top {
     display: none;
     position: fixed;
@@ -368,11 +369,10 @@ body.fixed-nav {
 
 .user-details .user-info-block {
     width: 100%;
-    position: absolute;
     top: 55px;
     background: rgb(255, 255, 255);
     z-index: 0;
-    padding-top: 35px;
+    padding-top: 1px;
 }
 
 .user-info-block .user-heading {
@@ -483,4 +483,102 @@ body.fixed-nav {
 
 .dataTables_filter {
     display: inline-block;
+}
+
+.blue-section {
+    overflow: auto;
+    padding: 20px 20px 0 20px;
+}
+
+.blue-section h1 {
+    font-size: 26px;
+    display: inline-block;
+}
+
+.blue-section button {
+    float: right;
+}
+
+.container {
+    background-color: #666;
+    border-radius: 3px;
+    color: white;
+    margin: 0 auto;
+    overflow: auto;
+    width: 960px;
+    margin: 10px
+}
+
+.container p {
+    margin: 0 40px;
+}
+
+.plans {
+    list-style: none;
+    margin: 0;
+    padding: 0px 40px;
+}
+
+.plans .plan {
+    background: white;
+    border-radius: 6px;
+    height: 60px;
+    margin: 10px 0;
+    opacity: 0.8;
+    padding: 4px 25px;
+}
+
+.plans .plan:hover,
+.plans .plan.highlight {
+    opacity: 1;
+}
+
+.plans .plan .price {
+    border-radius: 100%;
+    cursor: default;
+    display: block;
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    margin: 8px 10px 0 0;
+    text-align: center;
+    width: 46px;
+}
+
+.plans .plan .price.price-green {
+    background-color: #e1f1d1;
+    color: #52b327;
+    font-size: 8px;
+}
+
+.plans .plan .details {
+    color: #222;
+    display: block;
+    float: left;
+    height: 46px;
+    margin: 8px 0;
+    padding: 0px 10px;
+}
+
+.plans .plan .details .plan-title {
+    font-size: 17px;
+    font-weight: normal;
+    margin: 2px 0 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.plans .plan .details .plan-description {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.plans .plan .delete {
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    margin: 15px 0;
+    padding: 7px 16px;
 }

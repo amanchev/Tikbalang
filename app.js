@@ -5,6 +5,13 @@ var express = require('express'),
 var db = lowdb('./data/data.json');
 db._.mixin(require('underscore-db'));
 
+db._.createId = function(collectionName, doc) {
+    let len = db("clients").__wrapped__.length;
+
+
+    return len + 1;
+};
+
 var app = express();
 app.use(bodyParser.json());
 

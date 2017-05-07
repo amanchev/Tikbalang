@@ -21,7 +21,6 @@ module.exports = function(db) {
         var client = req.body;
 
 
-        client.id = db("clients").__wrapped__.length + 1;
 
 
 
