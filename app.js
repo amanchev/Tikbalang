@@ -7,8 +7,6 @@ db._.mixin(require('underscore-db'));
 
 db._.createId = function(collectionName, doc) {
     let len = db("clients").__wrapped__.length;
-
-
     return len + 1;
 };
 
@@ -26,6 +24,7 @@ var clientsController = require('./controllers/client-controller')(db);
 app.get('/api/users', usersController.get);
 app.get('/api/clients', clientsController.get);
 app.post('/api/clients', clientsController.post);
+app.post('/api/profile', clientsController.postDate);
 app.post('/api/users', usersController.post);
 app.put('/api/auth', usersController.put);
 

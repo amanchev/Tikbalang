@@ -60,7 +60,7 @@
   "clients": [
     {
       "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
-      "id": "1",
+      "id": 1,
       "name": "Tiger Nee",
       "profession": "System Architect",
       "age": 18,
@@ -112,7 +112,43 @@
       "age": 18,
       "trainings": 63,
       "endDate": "2011/07/25",
-      "price": "$170,750"
+      "price": "$170,750",
+      "workouts": [
+        {
+          "date": "2017/04/30",
+          "exercises": [
+            {
+              "exercise": "Bench Press",
+              "series": 5,
+              "reps": 10,
+              "at": 80
+            },
+            {
+              "exercise": "Push Ups",
+              "series": 4,
+              "reps": 12,
+              "at": 0
+            }
+          ]
+        },
+        {
+          "date": "2017/04/30",
+          "exercises": [
+            {
+              "exercise": "Bench Press",
+              "series": 5,
+              "reps": 10,
+              "at": 80
+            },
+            {
+              "exercise": "Push Ups",
+              "series": 4,
+              "reps": 12,
+              "at": 0
+            }
+          ]
+        }
+      ]
     },
     {
       "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",

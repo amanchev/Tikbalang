@@ -22,3 +22,17 @@ export function get(params) {
             $appContainer.html(template(data[window.location.hash.split(':')[1] - 1]));
         });
 }
+export function addTrainingDay() {
+    const date = $('#date').val();
+
+
+    data.addTrainingDay(date)
+        .then(
+            result => {
+                toastr.success(`Client ${name} has been added successfully`);
+
+
+
+            },
+            errorMsg => toastr.error(errorMsg));
+}

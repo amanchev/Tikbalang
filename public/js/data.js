@@ -35,8 +35,15 @@ export function addClient(name, profession, age, trainings, endDate, price, pict
         trainings,
         endDate,
         price,
-		picture
+        picture
     };
 
     return requester.post('api/clients', body);
+}
+export function addTrainingDay(data) {
+    const body = {
+        data
+    };
+
+    return requester.post('api/profile', body);
 }

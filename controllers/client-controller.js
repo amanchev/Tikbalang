@@ -19,11 +19,6 @@ module.exports = function(db) {
 
     function post(req, res) {
         var client = req.body;
-
-
-
-
-
         db('clients').insert(client);
         res.status(201)
             .json({
@@ -33,8 +28,23 @@ module.exports = function(db) {
             });
     }
 
+    function postDate(req, res) {
+
+        var client = db._.getById(db.clients, 1);
+
+        var newDate = req.body;
+        client.workouts.push(newDate);
+        res.status(201)
+            .json({
+                result: {
+                    newDate: newDate
+                }
+            });
+    }
+
     return {
         get: get,
         post: post,
+        postDate: postDate,
     };
 };
