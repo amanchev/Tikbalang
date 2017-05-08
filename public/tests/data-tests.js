@@ -347,6 +347,69 @@ describe('Unit Tests', () => {
             });
         });
 
+        describe('Data.addExercise() tests', () => {
+
+            const exercise = {
+            exercise: 'Bench Press',
+            series: '20',
+            reps: '5',
+            kg: '25',
+            dayId: '1',
+            profileId: '0',
+            }
+
+            beforeEach(() => {
+                sinon.stub(Requester, 'post', (exercise) => {
+                    return (new Promise((resolve, reject) => {
+                        resolve(result);
+                    }));
+                });
+            });
+
+            afterEach(() => {
+                Requester.post.restore();
+            });
+
+            it('Expect Data.addExercise() to make a POST request', (done) => {
+                Data.addExercise(exercise)
+                    .then(() => {
+                        expect(Requester.post).to.have.been.calledOnce;
+                    })
+                    .then(done, done)
+            });
+
+            it('Expect Data.addExercise() to make a POST request to api/day', (done) => {
+                Data.addExercise(exercise)
+                    .then(() => {
+                        expect(Requester.post).to.have.been.calledWith('api/day');
+                    })
+                    .then(done, done)
+            });
+
+             it('Expect Data.addExercise() to call POST with correct user data', (done)  => {
+                 Data.addExercise(exercise)
+                 .then(() => {
+                    const actual = Requester.post.firstCall.args[1];
+                    const prop = Object.keys(actual).sort();
+					expect(prop.length).to.equal(6);
+					expect(prop[0]).to.equal('dayId');
+					expect(prop[1]).to.equal('exercise');
+                    expect(prop[2]).to.equal('kg');
+                    expect(prop[3]).to.equal('profileId');
+                    expect(prop[4]).to.equal('reps');
+                    expect(prop[5]).to.equal('series');
+                 })
+                 .then(done,done)
+            });
+
+            it('Expect Data.addExercise() to return object', (done) => {
+                Data.addExercise(exercise)
+                .then((res)=>{             
+                    expect(res).to.be.a('object')
+                })
+                .then(done,done)
+            });
+        });
     });
 });
 mocha.run();
