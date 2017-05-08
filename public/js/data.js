@@ -40,9 +40,10 @@ export function addClient(name, profession, age, trainings, endDate, price, pict
 
     return requester.post('api/clients', body);
 }
-export function addTrainingDay(data) {
+export function addTrainingDay(date, id) {
     const body = {
-        data
+        date,
+        id
     };
 
     return requester.post('api/profile', body);

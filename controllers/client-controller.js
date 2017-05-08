@@ -2,13 +2,6 @@
 
 
 module.exports = function(db) {
-    let lastId = 41;
-
-    function generateId() {
-        return lastId += 1;
-    }
-
-
     function get(req, res) {
 
         let clients = db("clients");
@@ -19,6 +12,7 @@ module.exports = function(db) {
 
     function post(req, res) {
         var client = req.body;
+        client.workouts = [];
         db('clients').insert(client);
         res.status(201)
             .json({
@@ -30,9 +24,34 @@ module.exports = function(db) {
 
     function postDate(req, res) {
 
-        var client = db._.getById(db.clients, 1);
+        const id = req.body.id;
+        const client = db("clients").getById(+id);
+        var newDate = {
+            "date": req.body.date,
+            "id": client.workouts.length,
+            "exercises": {}
+        };
 
+
+        console.log(newDate);
+
+
+
+        client.workouts.push(newDate);
+        res.status(201)
+            .json({
+                result: {
+                    newDate: newDate
+                }
+            });
+    }
+
+    function postExercise(req, res) {
+
+        var client = db("clients").getById(1);
         var newDate = req.body;
+        console.log(client);
+
         client.workouts.push(newDate);
         res.status(201)
             .json({

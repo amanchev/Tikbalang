@@ -20,7 +20,8 @@ router
     .on('/logout', userController.logout)
     .on('/clients', clientsController.get)
     .on('/addclient', clientsController.addClient)
-    .on('/addtrainingday', profileController.addTrainingDay)
+    .on('/addtrainingday/:id', profileController.addTrainingDay)
+    .on('/addexercise', profileController.addExercise)
     .on('/profile/:id', profileController.get);
 
 $(document).ready(() => { loggedInCheck(); });

@@ -101,12 +101,17 @@
               "at": 0
             }
           ]
-        }
+        },
+        {
+          "date": "2017-05-19"
+        },
+        {},
+        {}
       ]
     },
     {
       "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
-      "id": "2",
+      "id": 2,
       "name": "Garrett Winters",
       "profession": "Accountant",
       "age": 18,
@@ -147,12 +152,23 @@
               "at": 0
             }
           ]
+        },
+        "2017-05-26",
+        {
+          "date": "2017-05-06",
+          "id": 3,
+          "exercises": {}
+        },
+        {
+          "date": "2017-05-18",
+          "id": 4,
+          "exercises": {}
         }
       ]
     },
     {
       "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
-      "id": "3",
+      "id": 3,
       "name": "Ashton Cox",
       "profession": "Junior Technical Author",
       "age": 18,
@@ -541,7 +557,25 @@
       "price": "$645,750"
     },
     {
+      "name": "goshi",
+      "profession": "",
+      "age": "",
+      "trainings": "",
+      "endDate": "",
+      "price": "",
       "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
+      "workouts": [
+        {
+          "date": "2017-05-10",
+          "id": 0,
+          "exercises": {}
+        },
+        {
+          "date": "2017-05-01",
+          "id": 1,
+          "exercises": {}
+        }
+      ],
       "id": 42
     }
   ]

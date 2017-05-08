@@ -23,16 +23,15 @@ export function get(params) {
         });
 }
 export function addTrainingDay() {
+    const id = window.location.hash.split(':')[1];
     const date = $('#date').val();
 
-
-    data.addTrainingDay(date)
+    data.addTrainingDay(date, id)
         .then(
             result => {
-                toastr.success(`Client ${name} has been added successfully`);
-
-
-
+                toastr.success(`Training day ${date} has been added successfully`);
+                window.location.hash = '#/profile/:' + id;
+                window.location.reload();
             },
             errorMsg => toastr.error(errorMsg));
 }

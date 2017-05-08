@@ -20,7 +20,7 @@
     <div class="container">
 	<section class="blue-section">
 		<h1>{{date}}</h1>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".add-training-modal">Add Training</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".add-exercise-modal">Add Exercise</button>
         
 	</section>
 
@@ -43,11 +43,11 @@
 {{/each}}
 </div>
 
-<div class="modal fade add-training-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade add-exercise-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add Training</h4>
+                <h4 class="modal-title">Add Exercise</h4>
             </div>
             <div class="modal-body">
 
@@ -124,7 +124,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="#/addtrainingday"><button type="button" class="btn btn-primary">Add</button></a>
+                <a href="#/addtrainingday/:{{id}}"><button type="button" class="btn btn-primary">Add</button></a>
             </div>
         </div>
         <!-- /.modal-content -->
