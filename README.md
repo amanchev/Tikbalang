@@ -6,7 +6,7 @@ Team members:
 • MonikaTzenova - Моника Ценова
 • Exodary - Красимир Златков
 
-Youtube link for the application:
+Youtube link for the application: https://www.youtube.com/watch?v=3tvETEj4qBU&feature=youtu.be
 
 Live preview of the application: 
 
