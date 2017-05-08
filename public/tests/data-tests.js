@@ -284,6 +284,69 @@ describe('Unit Tests', () => {
                 .then(done,done)
             });
         });
+
+        describe('Data.addTrainingDay() tests', () => {
+
+            const day = {
+            date: '2017-05-19',
+            id: '2',
+            }
+
+            beforeEach(() => {
+                sinon.stub(Requester, 'post', (day) => {
+                    return (new Promise((resolve, reject) => {
+                        resolve(result);
+                    }));
+                });
+            });
+
+            afterEach(() => {
+                Requester.post.restore();
+            });
+
+            it('Expect Data.addTrainingDay() to make a POST request', (done) => {
+                Data.addTrainingDay(day)
+                    .then(() => {
+                        expect(Requester.post).to.have.been.calledOnce;
+                    })
+                    .then(done, done)
+            });
+
+            it('Expect Data.addTrainingDay() to make a POST request to api/profile', (done) => {
+                Data.addTrainingDay(day)
+                    .then(() => {
+                        expect(Requester.post).to.have.been.calledWith('api/profile');
+                    })
+                    .then(done, done)
+            });
+
+             it('Expect Data.addTrainingDay() to call post with two parameters', (done)  => {
+                 Data.addTrainingDay(day)
+                 .then(() => {
+                     expect(Requester.post.firstCall.args.length).to.equal(2);
+                 })
+                 .then(done,done)
+            });
+
+            it('Expect Data.addTrainingDay() to call post with valid data', (done) => {
+                Data.addTrainingDay(day)
+                .then(() => {
+                    var actual = Object.keys( Requester.post.firstCall.args[1]);
+                    var expected = ['date', 'id'];
+                    expect(actual).to.eql(expected);
+                })
+                .then(done,done)
+            });          
+
+            it('Expect Data.addTrainingDay() to return object', (done) => {
+                Data.addTrainingDay(day)
+                .then((res)=>{             
+                    expect(res).to.be.a('object')
+                })
+                .then(done,done)
+            });
+        });
+
     });
 });
 mocha.run();
