@@ -21,7 +21,7 @@ router
     .on('/clients', clientsController.get)
     .on('/addclient', clientsController.addClient)
     .on('/addtrainingday/:id', profileController.addTrainingDay)
-    .on('/addexercise', profileController.addExercise)
+    .on('/addexercise/:id1/:id2', profileController.addExercise)
     .on('/profile/:id', profileController.get);
 
 $(document).ready(() => { loggedInCheck(); });

@@ -25,6 +25,7 @@ app.get('/api/users', usersController.get);
 app.get('/api/clients', clientsController.get);
 app.post('/api/clients', clientsController.post);
 app.post('/api/profile', clientsController.postDate);
+app.post('/api/day', clientsController.postExercise);
 app.post('/api/users', usersController.post);
 app.put('/api/auth', usersController.put);
 

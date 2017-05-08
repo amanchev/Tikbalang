@@ -2,6 +2,7 @@
 
 
 module.exports = function(db) {
+
     function get(req, res) {
 
         let clients = db("clients");
@@ -29,14 +30,8 @@ module.exports = function(db) {
         var newDate = {
             "date": req.body.date,
             "id": client.workouts.length,
-            "exercises": {}
+            "exercises": []
         };
-
-
-        console.log(newDate);
-
-
-
         client.workouts.push(newDate);
         res.status(201)
             .json({
@@ -48,15 +43,32 @@ module.exports = function(db) {
 
     function postExercise(req, res) {
 
-        var client = db("clients").getById(1);
-        var newDate = req.body;
+        const profileId = -(-req.body.profileId);
+        const dayId = -(-req.body.dayId);
+        const client = db("clients").getById(profileId);
         console.log(client);
 
-        client.workouts.push(newDate);
+        const day = search(dayId, client.workouts);
+
+        function search(id, myArray) {
+            for (var i = 0; i < myArray.length; i++) {
+                if (myArray[i].id === id) {
+                    return myArray[i];
+                }
+            }
+        }
+
+
+
+        const exercise = req.body;
+        console.log(day);
+        console.log(exercise);
+
+        day.exercises.push(exercise);
         res.status(201)
             .json({
                 result: {
-                    newDate: newDate
+                    exercise: exercise
                 }
             });
     }
@@ -65,5 +77,6 @@ module.exports = function(db) {
         get: get,
         post: post,
         postDate: postDate,
+        postExercise: postExercise,
     };
 };

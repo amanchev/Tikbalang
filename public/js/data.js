@@ -48,3 +48,17 @@ export function addTrainingDay(date, id) {
 
     return requester.post('api/profile', body);
 }
+
+
+export function addExercise(exercise, series, reps, kg, dayId, profileId) {
+    const body = {
+        exercise,
+        series,
+        reps,
+        kg,
+        dayId,
+        profileId
+    };
+
+    return requester.post('api/day', body);
+}
