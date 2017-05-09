@@ -1,12 +1,12 @@
 {
-  "name": "fortune-cookies",
+  "name": "trainer-app",
   "version": "1.0.0",
   "description": "##  App description",
   "main": "index.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Doncho Minkov (donchominkov@gmail.com)",
+  "authors": "askata992 - Асен Манчев • MonikaTzenova - Моника Ценова • Exodary - Красимир Златков",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.3",
