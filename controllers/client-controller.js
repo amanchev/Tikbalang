@@ -14,7 +14,7 @@ module.exports = function(db) {
     function post(req, res) {
         var client = req.body;
         client.workouts = [];
-        db('clients').shift(client);
+        db('clients').insert(client);
         res.status(201)
             .json({
                 result: {

@@ -9,14 +9,19 @@
     "clients": [{
             "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
             "id": 1,
-            "name": "Nicolas Flamel",
-            "profession": "Technical Suport",
-            "age": 21,
-            "trainings": 14,
-            "endDate": "2018/01/15",
-            "price": "$8,000",
-            "workouts": []
-        }, {
+            "name": "Nikolas Flammel",
+            "profession": "Tech Supp",
+            "age": 18,
+            "trainings": 66,
+            "endDate": "2017/09/18",
+            "price": "$6,000",
+            "workouts": [{
+                "date": "2017-05-10",
+                "id": 0,
+                "exercises": []
+            }]
+        },
+        {
             "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
             "id": 2,
             "name": "Anton Cena",
@@ -26,7 +31,8 @@
             "endDate": "2017/09/18",
             "price": "$6,000",
             "workouts": []
-        }, {
+        },
+        {
             "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
             "id": 3,
             "name": "Ashton Cox",
@@ -57,7 +63,17 @@
             "trainings": 33,
             "endDate": "2008/11/28",
             "price": "$162,700",
-            "workouts": []
+            "workouts": [{
+                "date": "2017-05-11",
+                "id": 0,
+                "exercises": [{
+                    "exercise": "Bench Press",
+                    "reps": "9",
+                    "kg": "60",
+                    "dayId": "0",
+                    "profileId": "5"
+                }]
+            }]
         },
         {
             "picture": "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png",
