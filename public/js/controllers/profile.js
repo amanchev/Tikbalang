@@ -43,10 +43,9 @@ export function addExercise() {
     const profileId = hash[3];
     const dayId = hash[5];
     const exercise = $('#exercise').val();
-    const series = $('input[name=inlineRadioOptions]:checked', '#series-form').val();
+    const series = $('input[name=inlineRadioOptions]:checked').val();
     const reps = $('#reps').val();
     const kg = $('#kg').val();
-
 
     data.addExercise(exercise, series, reps, kg, dayId, profileId)
         .then(

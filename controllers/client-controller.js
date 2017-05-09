@@ -60,6 +60,7 @@ module.exports = function(db) {
 
 
         const exercise = req.body;
+
         day.exercises.push(exercise);
         res.status(201)
             .json({
