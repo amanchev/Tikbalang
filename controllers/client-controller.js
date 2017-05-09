@@ -14,7 +14,7 @@ module.exports = function(db) {
     function post(req, res) {
         var client = req.body;
         client.workouts = [];
-        db('clients').insert(client);
+        db('clients').shift(client);
         res.status(201)
             .json({
                 result: {
@@ -46,7 +46,6 @@ module.exports = function(db) {
         const profileId = -(-req.body.profileId);
         const dayId = -(-req.body.dayId);
         const client = db("clients").getById(profileId);
-        console.log(client);
 
         const day = search(dayId, client.workouts);
 
@@ -61,9 +60,6 @@ module.exports = function(db) {
 
 
         const exercise = req.body;
-        console.log(day);
-        console.log(exercise);
-
         day.exercises.push(exercise);
         res.status(201)
             .json({

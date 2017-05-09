@@ -41,16 +41,9 @@ export function addExercise() {
     const re = /[/:]/;
     const hash = window.location.hash.split(re);
     const profileId = hash[3];
-    console.log(profileId);
-
-
     const dayId = hash[5];
-    console.log(dayId);
-
-
-
     const exercise = $('#exercise').val();
-    const series = $('input[name=radioName]:checked', '#myForm').val();
+    const series = $('input[name=inlineRadioOptions]:checked', '#series-form').val();
     const reps = $('#reps').val();
     const kg = $('#kg').val();
 
